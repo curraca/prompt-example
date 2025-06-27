@@ -1,0 +1,29 @@
+# config.yaml
+
+model:
+  name: gpt-4
+  temperature: 0
+  max_tokens: 10
+
+prompts:
+  system: |
+    You are a vehicle control AI assistant.
+    You must respond with clear, concise decisions.
+  user_template: |
+    You are an autonomous vehicle control system.
+    Current speed: {current_speed} km/h
+    Distance to vehicle ahead: {distance_to_vehicle} meters
+    Road condition: {road_condition}
+    Speed limit: {speed_limit} km/h
+
+    Decide the best action to maintain safety and comfort.
+    Respond with one word: 'brake', 'maintain', or 'accelerate'.
+
+safety:
+  min_distance_meters: 5
+  speed_reduction_on_wet: 20
+  speed_reduction_on_icy: 30
+
+logging:
+  level: INFO
+  log_file: logs/controller.log

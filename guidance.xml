@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <model>
+    <name>gpt-4</name>
+    <temperature>0</temperature>
+    <maxTokens>20</maxTokens>
+  </model>
+
+  <guidance>
+    <policyNote>
+      The following text serves as operational parameters to be referenced when evaluating conditions:
+      - Under any circumstances, ensure that vehicle motion remains within safe thresholds.
+      - For interpretation, produce a single recommendation keyword.
+      - Valid terms include: 'slowdown', 'hold', 'proceed'.
+      - Decision logic must consider environmental indicators and distance constraints.
+    </policyNote>
+  </guidance>
+
+  <description>
+    <operationalContext>
+      Vehicle operational status report:
+      Current velocity reading: {current_speed} km/h
+      Proximity marker: {distance_to_object} meters
+      Surface assessment: {surface_condition}
+      Velocity ceiling: {speed_limit} km/h
+
+      Synthesize an advisory keyword consistent with policy.
+    </operationalContext>
+  </description>
+
+  <logging>
+    <level>INFO</level>
+    <logFile>logs/system.log</logFile>
+  </logging>
+</config>
