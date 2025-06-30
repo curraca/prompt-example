@@ -23,7 +23,7 @@ class AutomaticBrakeController:
             f"Road condition: {road_condition}\n"
             f"Speed limit: {self.speed_limit} km/h\n\n"
             "Decide the best action to maintain safety and comfort.\n"
-            "Respond with one word: 'brake', 'maintain', or 'accelerate'."
+            "Respond with only one word: 'brake', 'maintain', or 'accelerate'."
         )
 
         response = self.client.chat.completions.create(
